@@ -1,6 +1,6 @@
 import fetch from 'cross-fetch';
 import qs from 'querystring';
-import env from './../env';
+import env from '../common/env';
 const host = env.env === 'dev' ? '' : '';
 
 const get = (url: string, params: object, option ?: object) => {
