@@ -44,18 +44,22 @@
 .box-flex-end {
     display: flex;
     justify-content: flex-end;
+    align-items: center;
 }
 .box-flex-space-between {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 .box-flex-space-around {
     display: flex;
     justify-content: space-around;
+    align-items: center;
 }
 .box-flex-space-evenly {
     display: flex;
     justify-content: space-evenly;
+    align-items: center;
 }
 
 .box-flex-align-end {
