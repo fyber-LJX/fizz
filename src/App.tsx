@@ -20,14 +20,11 @@ class App extends React.Component {
                     <Route  exact={true} path='/' component={Home} />
                     <Route
                     path='/home'
-                    render = {
-                        () => <Home />
-                    }
+                    compoment={Home}
                     />
                     <Route path='/blog'
-                    render = {
-                        () => <Blog />
-                    } />
+                    component={Blog}
+                    />
                 </Switch>
             </div>
         );
