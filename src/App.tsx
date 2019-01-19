@@ -12,10 +12,10 @@ class App extends React.Component {
                 <div className="fizz box-flex-column">
                     <Header></Header>
                     <Switch>
-                        <Route exact={true} path='/' component={Home} />
+                        {/* <Route exact={true} path='/' component={Home} /> */}
                         <Route path='/home' compoment={Home} />
                         <Route path='/blog' component={Blog} />
-                        <Redirect to="/home" />
+                        <Redirect exact from='/' to="/home" />
                     </Switch>
                 </div>
             </div>

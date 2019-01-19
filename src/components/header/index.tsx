@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom'; 
+import { NavLink, Redirect } from 'react-router-dom'; 
 
 import './index.scss';
 
@@ -19,6 +19,7 @@ export default class Header extends React.Component<PropsType, StateType> {
                     <NavLink to='/blog' activeClassName='active'>文章</NavLink>
                     <NavLink to='/category' activeClassName='active'>分类</NavLink>
                     <NavLink to='/about' activeClassName='active'>相关</NavLink>
+                    <Redirect to='/home'></Redirect>
                 </nav>
             </header>
         )
