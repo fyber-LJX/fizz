@@ -1,15 +1,22 @@
 import { Epic } from 'redux-observable';
 import { ActionType, isActionOf } from 'typesafe-actions';
-import {testAction} from './../actions/index';
+import * as actions  from './../actions/index';
 import { RootState } from './../reducers/index';
-import { filter, map } from 'rxjs/operators';
+import { filter, switchMap, map, catchError } from 'rxjs/operators';
+import { testPromise } from './../../fetch/test';
+import { from, of } from 'rxjs';
 
-type Action = ActionType<typeof testAction>;
+type Action = ActionType<typeof actions>;
 
-const testEpic: Epic<Action, Action, RootState> = (action$, store) => {
-    action$.pipe(
-        filter(isActionOf(testAction.success)),
-        map(testAction)
+const testEpic: Epic<Action, Action, RootState> = (action$) => {
+    return action$.pipe(
+        filter(isActionOf(actions.testGetAction)),
+        switchMap(() => 
+            from(testPromise()).pipe(
+                map(actions.testSetAction),
+                catchError((error: Error) => of(actions.testErrorAction(error)))
+            )
+        )
     )
 }
 

@@ -1,4 +1,4 @@
-const testPromise = new Promise((resolve, reject) => {
+const testPromise = () => new Promise((resolve, reject) => {
     setTimeout(() => {
         resolve([
             {

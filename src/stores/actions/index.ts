@@ -1,5 +1,9 @@
-import testAction from './test';
+import { testGetAction, testSetAction, testErrorAction } from './test';
+import { fetchingAction } from './fetching';
 
 export {
-    testAction
+    testGetAction, 
+    testSetAction, 
+    testErrorAction,
+    fetchingAction
 }

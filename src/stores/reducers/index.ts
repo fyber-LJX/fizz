@@ -3,9 +3,9 @@ import { combineReducers } from 'redux';
 import { testReducer, testState } from './test';
 
 export type RootState = {
-    test: testState;
+    categoryList: testState;
 }
 
 export default combineReducers({
-    testReducer
+    categoryList: testReducer
 })

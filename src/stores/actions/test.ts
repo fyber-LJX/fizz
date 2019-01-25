@@ -1,4 +1,4 @@
-import { TEST_REQUEST } from './constant';
+import { TEST_REQUEST, TEST_SUCCESS, TEST_ERROR } from './constant';
 import { createAction } from "typesafe-actions";
 
 export interface Category {
@@ -10,6 +10,14 @@ export interface Category {
     blogNum: number
 }
 
-const testAction = createAction(TEST_REQUEST, resolve => (category: Category[]) => resolve(category));
+const testGetAction = createAction(TEST_REQUEST, resolve => () => resolve());
 
-export default testAction;
+const testSetAction = createAction(TEST_SUCCESS, resolve => (category: Array<Category>) => resolve(category));
+
+const testErrorAction = createAction(TEST_ERROR, resolve => (error: Error) => resolve({error}));
+
+export {
+    testGetAction,
+    testSetAction,
+    testErrorAction
+};
