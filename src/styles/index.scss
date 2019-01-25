@@ -1,0 +1,21 @@
+@import './reset.scss';
+@import './flex.scss';
+
+html {
+    height: 100%;
+    // font: 14px/1.5 "Helvetica Neue",Helvetica,Arial,"Microsoft Yahei","Hiragino Sans GB","Heiti SC","WenQuanYi Micro Hei",sans-serif;
+    font: 14px/1.5 "IBM Plex Mono,Space Grotesk,Roboto Slab,sans-serif";
+}
+
+.color-1 {
+    color: #111;
+}
+.color-2 {
+    color: #222;
+}
+.color-40 {
+    color: #404040;
+}
+.color-9 {
+    color: #999;
+}
