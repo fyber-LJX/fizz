@@ -1,9 +1,11 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { testGetAction } from './../../stores/actions/test';
 
 interface PropsType {};
 interface StateType {};
 
-export default class Blog extends React.Component<PropsType, StateType> {
+class Blog extends React.Component<PropsType, StateType> {
     constructor(props: PropsType) {
         super(props);
     }
@@ -12,5 +14,20 @@ export default class Blog extends React.Component<PropsType, StateType> {
         return (
             <div className="main-content">Blog</div>
         )
+    }
+}
+
+const mapStateToProps = (state: any) => {
+    console.log(state);
+    return {
+        categoryList: state.categoryList
+    }
+}
+
+const mapDispatchToProps = (dispatch: any) => {
+    return {
+        getCateGoryList: () => {
+
+        }
     }
 }
