@@ -1,0 +1,20 @@
+{
+  "editor.tabSize": 4,
+  "editor.formatOnSave": true,
+  "prettier.semi": false,
+  "prettier.tabWidth": 4,
+  "search.exclude": {
+    // 搜索黑名单
+    "**/node_modules": true,
+    "**/bower_components": true,
+    "**/dist": true,
+    "**/build": true,
+    "**/.git": true,
+    "**/.gitignore": true,
+    "**/.svn": true,
+    "**/.DS_Store": true,
+    "**/.idea": true,
+    "**/.vscode": false,
+    "**/yarn.lock": true
+  }
+}

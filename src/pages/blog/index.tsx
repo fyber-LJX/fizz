@@ -1,33 +1,22 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import { testGetAction } from './../../stores/actions/test';
+import React from "react"
 
-interface PropsType {};
-interface StateType {};
+interface PropsType {
+    getCateGoryList: GetCateGoryList
+}
+interface GetCateGoryList {
+    (): void
+}
+interface StateType {}
 
-class Blog extends React.Component<PropsType, StateType> {
+export default class Blog extends React.Component<PropsType, StateType> {
     constructor(props: PropsType) {
-        super(props);
+        super(props)
+        console.log(props)
+        props.getCateGoryList()
     }
 
     render() {
-        return (
-            <div className="main-content">Blog</div>
-        )
-    }
-}
-
-const mapStateToProps = (state: any) => {
-    console.log(state);
-    return {
-        categoryList: state.categoryList
-    }
-}
-
-const mapDispatchToProps = (dispatch: any) => {
-    return {
-        getCateGoryList: () => {
-
-        }
+        console.log(this.props)
+        return <div className="main-content">Blog</div>
     }
 }

@@ -1,9 +1,9 @@
-import { combineReducers } from 'redux';
+import { combineReducers } from "redux"
 
-import { testReducer, testState } from './test';
+import { testReducer, testState } from "./test"
 
 export type RootState = {
-    categoryList: testState;
+    category: testState
 }
 
 export default combineReducers({
