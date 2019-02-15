@@ -1,11 +1,11 @@
 import { ActionType, getType } from "typesafe-actions"
 import * as actions from "./../actions/index"
-import { Category } from "./../actions/test"
+import { CategoryItem } from "./../../shared/models/category"
 
 type Action = ActionType<typeof actions>
 
 interface testState {
-    categoryList: Array<Category>
+    categoryList: Array<CategoryItem>
 }
 
 const initialState = {

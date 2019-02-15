@@ -7,5 +7,5 @@ export type RootState = {
 }
 
 export default combineReducers({
-    categoryList: testReducer
+    category: testReducer
 })

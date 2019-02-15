@@ -12,7 +12,7 @@ interface PropsType {}
 const mapStateToProps = (state: RootState) => {
     console.log(state)
     return {
-        categoryList: state.category
+        category: state.category
     }
 }
 

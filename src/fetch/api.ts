@@ -1,10 +1,10 @@
-import fetch from 'cross-fetch';
-import qs from 'querystring';
-import env from '../common/env';
-const host = env.env === 'dev' ? '' : '';
+import fetch from "cross-fetch"
+import qs from "querystring"
+import env from "../shared/env"
+const host = env.env === "dev" ? "" : ""
 
-const get = (url: string, params: object, option ?: object) => {
-    const URL = `${host}${url}?${qs.stringify(params)}`;
+const get = (url: string, params: object, option?: object) => {
+    const URL = `${host}${url}?${qs.stringify(params)}`
     const options = {
         method: "GET",
         headers: {
@@ -14,16 +14,16 @@ const get = (url: string, params: object, option ?: object) => {
     return new Promise((resolve: any, reject: any) => {
         fetch(URL, Object.assign({}, options, option)).then((res: any) => {
             if (res.code === 200) {
-                resolve(res.data);
+                resolve(res.data)
             } else {
-                reject(res.message);
+                reject(res.message)
             }
         })
     })
 }
 
-const post = (url: string, params: object, option ?: object) => {
-    const URL = `${host}${url}`;
+const post = (url: string, params: object, option?: object) => {
+    const URL = `${host}${url}`
     const options = {
         method: "POST",
         body: JSON.stringify(params),
@@ -35,16 +35,13 @@ const post = (url: string, params: object, option ?: object) => {
         fetch(url, Object.assign({}, options, option)).then(res => {
             fetch(URL, Object.assign({}, options, option)).then((res: any) => {
                 if (res.code === 200) {
-                    resolve(res.data);
+                    resolve(res.data)
                 } else {
-                    reject(res.message);
+                    reject(res.message)
                 }
             })
         })
     })
 }
 
-export {
-    get,
-    post
-}
+export { get, post }
