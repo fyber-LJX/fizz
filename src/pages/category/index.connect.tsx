@@ -1,19 +1,17 @@
 import { ActionType } from "typesafe-actions"
-import { Dispatch, bindActionCreators } from "redux"
+import Category from "./index"
 import { connect } from "react-redux"
+import { Dispatch, bindActionCreators } from "redux"
 import * as actions from "./../../stores/actions"
 import { RootState } from "./../../stores/reducers"
-import Blog from "./index"
 
 type Action = ActionType<typeof actions>
 
-const mapStateToProps = (state: RootState) => {
-    console.log(state)
+const maoStateToProps = (state: RootState) => {
     return {
         category: state.category
     }
 }
-
 const mapDispatchToProps = (dispatch: Dispatch<Action>) =>
     bindActionCreators(
         {
@@ -23,6 +21,6 @@ const mapDispatchToProps = (dispatch: Dispatch<Action>) =>
     )
 
 export default connect(
-    mapStateToProps,
+    maoStateToProps,
     mapDispatchToProps
-)(Blog)
+)(Category)

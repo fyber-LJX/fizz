@@ -1,21 +1,37 @@
-@import './reset.scss';
-@import './flex.scss';
+@import "./reset.scss";
+@import "./flex.scss";
 
 html {
     height: 100%;
     // font: 14px/1.5 "Helvetica Neue",Helvetica,Arial,"Microsoft Yahei","Hiragino Sans GB","Heiti SC","WenQuanYi Micro Hei",sans-serif;
-    font: 14px/1.5 "IBM Plex Mono,Space Grotesk,Roboto Slab,sans-serif";
+    font: 14px/1.5 "Roboto, Noto, sans-serif";
+    color: #212121;
 }
 
-.color-1 {
-    color: #111;
+// 以下为UI约束
+
+.font14 {
+    font-size: 14px;
 }
-.color-2 {
-    color: #222;
+.font12 {
+    font-size: 12px;
 }
-.color-40 {
-    color: #404040;
+.font16 {
+    font-size: 16px;
 }
-.color-9 {
-    color: #999;
+.font20 {
+    font-size: 20px;
+}
+.font34 {
+    font-size: 34px;
+}
+
+.font-main-color {
+    color: #212121;
+}
+.main-color {
+    color: #00897b;
+}
+.aide-color {
+    color: #673ab7;
 }

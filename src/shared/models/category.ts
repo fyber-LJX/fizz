@@ -3,7 +3,7 @@ interface Category {
 }
 
 interface CategoryItem {
-    categoryId: number
+    id: number
     title: string
     pv: number
     background: string

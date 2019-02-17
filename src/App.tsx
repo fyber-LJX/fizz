@@ -1,9 +1,9 @@
 import * as React from "react"
-import { Route, Switch, Redirect } from "react-router-dom"
+import { Route, Switch } from "react-router-dom"
 import "./App.scss"
 import Header from "./components/header"
 import Blog from "./pages/blog/index.connect"
-import Home from "./pages/home/index"
+import Category from "./pages/category/index.connect"
 
 class App extends React.Component {
     render() {
@@ -13,9 +13,8 @@ class App extends React.Component {
                     <Header />
                     <Switch>
                         {/* <Route exact={true} path='/' component={Home} /> */}
-                        <Route path="/home" compoment={Home} />
                         <Route path="/blog" component={Blog} />
-                        <Redirect exact from="/" to="/home" />
+                        <Route path="/category" component={Category} />
                     </Switch>
                 </div>
             </div>
