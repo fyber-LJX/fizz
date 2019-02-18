@@ -7,7 +7,7 @@ import { RootState } from "./../../stores/reducers"
 
 type Action = ActionType<typeof actions>
 
-const maoStateToProps = (state: RootState) => {
+const mapStateToProps = (state: RootState) => {
     return {
         category: state.category
     }
@@ -21,6 +21,6 @@ const mapDispatchToProps = (dispatch: Dispatch<Action>) =>
     )
 
 export default connect(
-    maoStateToProps,
+    mapStateToProps,
     mapDispatchToProps
 )(Category)
