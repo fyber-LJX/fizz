@@ -1,6 +1,6 @@
 import React from "react"
 import { NavLink } from "react-router-dom"
-import { from } from "rxjs"
+import { from, fromEvent } from "rxjs"
 import { filter, map } from "rxjs/operators"
 import Button from "@material-ui/core/Button"
 import SearchIcon from "@material-ui/icons/Search"
@@ -11,6 +11,7 @@ import "./index.scss"
 
 interface StateType {
     searching: boolean
+    keyWord: string
 }
 
 const headerConfig = [
@@ -35,17 +36,52 @@ source$
 
 class Header extends React.Component {
     state: StateType = {
-        searching: false
+        searching: false,
+        keyWord: ""
+    }
+
+    componentDidMount() {
+        const keyup$ = fromEvent(document, "keyup")
+
+        keyup$
+            .pipe(
+                filter(
+                    (event: any) => event.code.toLocaleLowerCase() === "enter"
+                )
+            )
+            .subscribe(() => this.submitSearch())
+    }
+
+    submitSearch = () => {
+        const { keyWord } = this.state
+
+        if (keyWord === "") return
+        console.log(keyWord)
     }
 
     handleSearch = (searching: boolean) => {
         this.setState({
             searching: searching
         })
+        const input: any = document.querySelector(".search-input>input")
+        if (searching) {
+            input.focus()
+        } else {
+            this.setState({
+                keyWord: ""
+            })
+        }
+    }
+
+    handleChangeKeyWord = (event: React.ChangeEvent<HTMLInputElement>) => {
+        const { value } = event.target
+        this.setState({
+            keyWord: value
+        })
     }
 
     render() {
-        const { searching } = this.state
+        const { searching, keyWord } = this.state
         return (
             <header className="box-flex-space-between">
                 <h1 className="title">Fizz</h1>
@@ -59,17 +95,19 @@ class Header extends React.Component {
                             <SearchIcon />
                         </IconButton>
                         <Input
-                            disableUnderline={false}
+                            disableUnderline={true}
                             className={`${
                                 searching ? "search-input-active" : ""
                             } search-input`}
                             placeholder="搜索Fizz"
+                            value={keyWord}
+                            onChange={this.handleChangeKeyWord}
                             onBlur={() => this.handleSearch(false)}
                         />
                     </div>
                     <nav>
                         {Nav.map((item: any) => item)}
-                        <NavLink to="/login">
+                        <NavLink className="login-box" to="/login">
                             <Button color="inherit" variant="outlined">
                                 登录
                             </Button>

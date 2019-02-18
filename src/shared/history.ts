@@ -1,3 +1,9 @@
-import { createBrowserHistory } from 'history';
+import { createBrowserHistory } from "history"
 
-export default createBrowserHistory();
+const history = createBrowserHistory()
+
+history.listen((location: any) => {
+    console.log(location)
+})
+
+export default history
