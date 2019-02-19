@@ -15,7 +15,7 @@ interface StateType {
 }
 
 const headerConfig = [
-    { to: "/blog", role: 3, title: "文章" },
+    { to: "/home", role: 3, title: "首页" },
     { to: "/category", role: 3, title: "分类" },
     { to: "/column", role: 3, title: "专栏" },
     { to: "/edit", role: 1, title: "编辑" },

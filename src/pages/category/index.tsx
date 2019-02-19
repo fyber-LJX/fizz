@@ -10,9 +10,11 @@ export default class Category extends React.Component<PropsType> {
         this.props.getCateGoryList()
     }
 
+    handleClickNav = (id: number) => {
+        console.log(id)
+    }
+
     render() {
-        const { category } = this.props
-        console.log(category)
-        return <div className="category">category</div>
+        return <div className="category" />
     }
 }

@@ -1,26 +1,48 @@
 import React from "react"
+import { Category as CategoryData } from "./../../shared/models/category"
+import NavList from "./../../components/nav"
+import "./index.scss"
 
 interface PropsType {
-    onClickHome: Function
-    count: number
+    category: CategoryData
+    getCateGoryList: Function
 }
-interface StateType {}
+interface StateType {
+    active: number
+}
 
 export default class Home extends React.Component<PropsType, StateType> {
-    constructor(props: PropsType) {
-        super(props)
+    state = {
+        active: 0
+    }
+
+    componentDidMount() {
+        this.props.getCateGoryList()
+    }
+
+    handleClickNav = (id: number) => {
+        this.setState({
+            active: id
+        })
     }
 
     render() {
+        const { category } = this.props
+        const { categoryList } = category
+        let { active } = this.state
+
+        if (!active && categoryList.length > 0) {
+            active = categoryList[0].id
+        }
+
         return (
-            <div
-                className="main-content"
-                onClick={() => {
-                    console.log(this.props.count)
-                    this.props.onClickHome(10)
-                }}
-            >
-                Home{this.props.count}
+            <div className="home">
+                <NavList
+                    active={active}
+                    list={categoryList}
+                    clickNav={this.handleClickNav}
+                />
+                <div className="main-content" />
             </div>
         )
     }
