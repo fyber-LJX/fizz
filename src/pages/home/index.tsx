@@ -1,7 +1,13 @@
 import React from "react"
-import { Category as CategoryData } from "./../../shared/models/category"
+import {
+    Category as CategoryData,
+    CategoryItem
+} from "./../../shared/models/category"
 import NavList from "./../../components/nav"
 import "./index.scss"
+import { Switch, Route } from "react-router-dom"
+import Category from "../category"
+import history from "src/shared/history"
 
 interface PropsType {
     category: CategoryData
@@ -24,6 +30,7 @@ export default class Home extends React.Component<PropsType, StateType> {
         this.setState({
             active: id
         })
+        history.push("id")
     }
 
     render() {
@@ -42,7 +49,13 @@ export default class Home extends React.Component<PropsType, StateType> {
                     list={categoryList}
                     clickNav={this.handleClickNav}
                 />
-                <div className="main-content" />
+                <div className="main-content">
+                    <Switch>
+                        {categoryList.map((item: CategoryItem) => (
+                            <Route path={item.name} component={Category} />
+                        ))}
+                    </Switch>
+                </div>
             </div>
         )
     }
