@@ -3,15 +3,16 @@ import "./index.scss"
 import Button from "@material-ui/core/Button"
 import { fromEvent } from "rxjs"
 
-interface NavItem {
+export interface NavItem {
     id: number
     title: string
+    name: string
 }
 
 interface PropsType {
     list: Array<NavItem>
     clickNav: {
-        (id: number): void
+        (item: NavItem): void
     }
     active: number
 }
@@ -49,8 +50,8 @@ export default class Nav extends React.Component<PropsType> {
         }
     }
 
-    handleClickNav = (id: number) => {
-        this.props.clickNav(id)
+    handleClickNav = (item: NavItem) => {
+        this.props.clickNav(item)
     }
 
     render() {
@@ -73,7 +74,7 @@ export default class Nav extends React.Component<PropsType> {
                                     className={
                                         item.id === active ? "active" : ""
                                     }
-                                    onClick={() => this.handleClickNav(item.id)}
+                                    onClick={() => this.handleClickNav(item)}
                                 >
                                     <Button color="inherit">
                                         {item.title}

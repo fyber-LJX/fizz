@@ -4,25 +4,25 @@ const testPromise = () =>
             resolve([
                 {
                     id: 12321,
-                    title: "DNodeJS",
+                    title: "前端",
                     pv: 132,
                     background:
                         "https://lc-gold-cdn.xitu.io/321f1ebdf1009674a025.jpg?imageView2/2/w/200/h/64/q/85/format/webp/interlace/1",
-                    name: "前端",
+                    name: "frontend",
                     blogNum: 91
                 },
                 {
                     id: 12331,
-                    title: "TypeScript",
+                    title: "后端",
                     pv: 132,
                     background:
                         "https://lc-gold-cdn.xitu.io/d788a559489fa6e30b25.png?imageView2/2/w/200/h/64/q/85/format/webp/interlace/1",
-                    name: "前端",
+                    name: "backend",
                     blogNum: 91
                 },
                 {
                     id: 121231,
-                    title: "DNodeJS",
+                    title: "IOS",
                     pv: 132,
                     background:
                         "https://lc-gold-cdn.xitu.io/321f1ebdf1009674a025.jpg?imageView2/2/w/200/h/64/q/85/format/webp/interlace/1",

@@ -3,10 +3,10 @@ import {
     Category as CategoryData,
     CategoryItem
 } from "./../../shared/models/category"
-import NavList from "./../../components/nav"
+import NavList, { NavItem } from "./../../components/nav"
 import "./index.scss"
 import { Switch, Route } from "react-router-dom"
-import Category from "../category"
+import BlogList from "./../blog-list"
 import history from "src/shared/history"
 
 interface PropsType {
@@ -26,11 +26,13 @@ export default class Home extends React.Component<PropsType, StateType> {
         this.props.getCateGoryList()
     }
 
-    handleClickNav = (id: number) => {
+    handleClickNav = (nav: NavItem) => {
+        const { id, name } = nav
         this.setState({
             active: id
         })
-        history.push("id")
+        console.log(name)
+        history.push(`/timeline/${name}`)
     }
 
     render() {
@@ -52,7 +54,7 @@ export default class Home extends React.Component<PropsType, StateType> {
                 <div className="main-content">
                     <Switch>
                         {categoryList.map((item: CategoryItem) => (
-                            <Route path={item.name} component={Category} />
+                            <Route name={item.name} component={BlogList} />
                         ))}
                     </Switch>
                 </div>
