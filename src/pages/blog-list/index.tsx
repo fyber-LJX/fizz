@@ -1,6 +1,7 @@
 import React from "react"
 
 interface PropsType {}
+
 interface StateType {}
 
 export default class BlogList extends React.Component<PropsType, StateType> {
