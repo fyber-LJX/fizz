@@ -10,6 +10,7 @@ export default class BlogList extends React.Component<PropsType, StateType> {
     }
 
     render() {
+        console.log(123)
         return <div className="main-content">bloglist</div>
     }
 }
