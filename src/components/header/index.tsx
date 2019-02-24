@@ -28,7 +28,9 @@ source$
         filter(value => value.role === 3),
         map((value, index) => (
             <NavLink to={value.to} activeClassName="active" key={index}>
-                <Button color="inherit">{value.title}</Button>
+                <Button size="large" color="inherit">
+                    {value.title}
+                </Button>
             </NavLink>
         ))
     )

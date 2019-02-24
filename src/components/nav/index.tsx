@@ -2,19 +2,14 @@ import React from "react"
 import "./index.scss"
 import Button from "@material-ui/core/Button"
 import { fromEvent } from "rxjs"
-
-export interface NavItem {
-    id: number
-    title: string
-    name: string
-}
+import { TopicType } from "src/shared/models/home"
 
 interface PropsType {
-    list: Array<NavItem>
+    list: Array<TopicType>
     clickNav: {
-        (item: NavItem): void
+        (item: TopicType): void
     }
-    active: number
+    active: string
 }
 
 interface StateProps {
@@ -50,7 +45,7 @@ export default class Nav extends React.Component<PropsType> {
         }
     }
 
-    handleClickNav = (item: NavItem) => {
+    handleClickNav = (item: TopicType) => {
         this.props.clickNav(item)
     }
 
@@ -68,11 +63,11 @@ export default class Nav extends React.Component<PropsType> {
                 >
                     <nav className="box-flex main-width">
                         {list.length > 0 &&
-                            list.map((item: NavItem) => (
+                            list.map((item: TopicType) => (
                                 <li
                                     key={item.id}
                                     className={
-                                        item.id === active ? "active" : ""
+                                        item.name === active ? "active" : ""
                                     }
                                     onClick={() => this.handleClickNav(item)}
                                 >
