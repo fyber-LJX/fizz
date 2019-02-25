@@ -1,4 +1,7 @@
 import React from "react"
+import { entryList } from "./modle"
+import { BlogEntry } from "src/shared/models/blog"
+import EntryItem from "./../../components/entry-item"
 
 interface PropsType {}
 
@@ -10,11 +13,16 @@ export default class BlogList extends React.Component<PropsType, StateType> {
     }
 
     render() {
-        console.log(123)
+        console.log(entryList)
         return (
             <div className="fizz-entry">
                 <article>
-                    <div className="entry-list" />
+                    <div className="entry-list">
+                        {entryList &&
+                            entryList.map((entry: BlogEntry) => {
+                                ;<EntryItem entry={entry} />
+                            })}
+                    </div>
                 </article>
                 <aside />
             </div>
