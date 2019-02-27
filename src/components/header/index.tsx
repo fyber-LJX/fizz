@@ -85,12 +85,12 @@ class Header extends React.Component {
     render() {
         const { searching, keyWord } = this.state
         return (
-            <header className="box-flex-space-between">
+            <header className="sona-flex-justify-SB sona-flex-align-C">
                 <h1 className="title">Fizz</h1>
-                <div className="box-flex-center">
+                <div className="sona-flex-center">
                     <div className="search">
                         <IconButton
-                            className="search-btn"
+                            className="sona-mr-10"
                             aria-label="Delete"
                             onClick={() => this.handleSearch(true)}
                         >
@@ -109,7 +109,7 @@ class Header extends React.Component {
                     </div>
                     <nav>
                         {Nav.map((item: any) => item)}
-                        <NavLink className="login-box" to="/login">
+                        <NavLink className="sona-ml-20" to="/login">
                             <Button color="inherit" variant="outlined">
                                 登录
                             </Button>

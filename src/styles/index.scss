@@ -1,5 +1,4 @@
-@import "./reset.scss";
-@import "./flex.scss";
+@import "league_sona/src/index.scss";
 
 html {
     height: 100%;
@@ -9,22 +8,6 @@ html {
 }
 
 // 以下为UI约束
-
-.font14 {
-    font-size: 14px;
-}
-.font12 {
-    font-size: 12px;
-}
-.font16 {
-    font-size: 16px;
-}
-.font20 {
-    font-size: 20px;
-}
-.font34 {
-    font-size: 34px;
-}
 
 .font-main-color {
     color: #212121;
