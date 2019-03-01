@@ -3,6 +3,7 @@ import { entryList } from "./modle"
 import { BlogEntry } from "src/shared/models/blog"
 import EntryItem from "./../../components/entry-item"
 import "./index.scss"
+import PopularBox from "./components/popular"
 
 interface PropsType {}
 
@@ -15,8 +16,8 @@ export default class BlogList extends React.Component<PropsType, StateType> {
 
   render() {
     return (
-      <div className="fizz-entry">
-        <article className="article-side sona-ml-20">
+      <div className="fizz-entry sona-flex">
+        <article className="article-side sona-mr-60">
           <div className="entry-list">
             {entryList &&
               entryList.map((entry: BlogEntry) => (
@@ -24,7 +25,9 @@ export default class BlogList extends React.Component<PropsType, StateType> {
               ))}
           </div>
         </article>
-        <aside />
+        <aside className="aside">
+          <PopularBox list={entryList.slice(0, 5)} />
+        </aside>
       </div>
     )
   }

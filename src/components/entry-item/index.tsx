@@ -22,27 +22,29 @@ export default class EntryItem extends React.Component<PropsType> {
       readTime,
       pv,
       praise,
-      author
+      author,
+      category
     } = entry
     return (
-      <article
-        className="entry-item sona-flex-justify-SB sona-mb-30"
-        style={{ maxHeight: "150px" }}
-      >
-        <div className="sona-flex-column">
+      <article className="entry-item sona-flex-justify-SB sona-mb-30">
+        <div
+          className="sona-flex-column"
+          style={{ width: "510px", height: "100px" }}
+        >
           <div className="time-info fizz-font-secondary sona-font-12 sona-mb-5">
-            <span className="publime-time sona-mr-5">{publicTime}</span>
-            <span>·</span>
-            <span className="read-time sona-ml-5">{readTime} min read</span>
-          </div>
-          <h3 className="sona-font-24 sona-mb-10">
-            <strong>{title}</strong>
-          </h3>
-          <div className="description fizz-font-secondary sona-mb-15">
-            {description}
-          </div>
-          <div className="author-info sona-font-14 sona-mh-5">
             <span className="author">{author}</span>
+            <span className=" sona-mv-5">·</span>
+            <span className="publime-time">{publicTime}</span>
+            <span className=" sona-mv-5">·</span>
+            <span className="read-time">{readTime} min read</span>
+            <span className=" sona-mv-5">·</span>
+            <span className="read-time">{category}</span>
+          </div>
+          <h3 className="sona-font-18 sona-mb-10 sona-line-height-24">
+            {title}
+          </h3>
+          <div className="description fizz-font-secondary sona-mb-10 sona-line-height-24">
+            {description}
           </div>
           <div className="action sona-font-12 sona-flex fizz-font-secondary">
             <div className="sona-mr-20">
@@ -57,8 +59,15 @@ export default class EntryItem extends React.Component<PropsType> {
             </div>
           </div>
         </div>
-        <div className="img" style={{ width: "150px" }}>
-          <img src={image} style={{ objectFit: "fill" }} alt={title} />
+        <div
+          className="img sona-br-4"
+          style={{ width: "150px", height: "100px", overflow: "hidden" }}
+        >
+          <img
+            src={image}
+            style={{ objectFit: "fill", height: "100%" }}
+            alt={title}
+          />
         </div>
       </article>
     )

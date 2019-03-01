@@ -1,0 +1,11 @@
+.virtial-nav-parent {
+  &.fixed {
+    position: fixed;
+    box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.15);
+  }
+
+  .scroll-container {
+    position: absolute;
+    top: 0;
+  }
+}
