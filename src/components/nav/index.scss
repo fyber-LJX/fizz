@@ -1,23 +1,25 @@
-$mainColor: #00897b;
+@import "./../../styles/color.scss";
+
 .nav-list {
-    width: 100%;
-    position: absolute;
-    top: 0;
-    height: 45px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  height: 45px;
+  background: #fff;
 
-    li.active {
-        color: $mainColor;
-    }
+  li.active {
+    @extend %fizz-primary;
+  }
 
-    li:hover {
-        color: $mainColor;
-    }
+  li:hover {
+    @extend %fizz-primary;
+  }
 
-    &.fixed {
-        position: fixed;
-        box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.15);
-    }
+  &.fixed {
+    position: fixed;
+    box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.15);
+  }
 }
 .virtial-nav-parent {
-    position: relative;
+  position: relative;
 }

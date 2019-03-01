@@ -1,0 +1,27 @@
+$primary: #00897b !global;
+$secondary: #673ab7 !global;
+%fizz-primary {
+  color: $primary;
+}
+%fizz-secondary {
+  color: $secondary;
+}
+%fizz-back-primary {
+  background-color: $primary;
+}
+%fizz-back-secondary {
+  background-color: $secondary;
+}
+
+$font-primary: #212121 !global;
+$font-secondary: #616161 !global;
+$font-thead: #757575 !global;
+%fizz-font-primary {
+  color: $font-primary;
+}
+%fizz-font-secondary {
+  color: $font-secondary;
+}
+%fizz-font-thead {
+  color: $font-thead;
+}

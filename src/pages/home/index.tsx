@@ -10,55 +10,55 @@ import { of } from "rxjs"
 
 interface PropsType {}
 interface StateType {
-    active: string
+  active: string
 }
 
 export default class Home extends React.Component<PropsType, StateType> {
-    state = {
-        active: "frontend"
-    }
+  state = {
+    active: "frontend"
+  }
 
-    componentDidMount() {
-        this.checkActive()
-    }
+  componentDidMount() {
+    this.checkActive()
+  }
 
-    checkActive = () => {
-        const { location } = history
-        const { pathname } = location
-        const pathName$ = of(pathname)
-        pathName$.subscribe((value: string) => {
-            this.setState({
-                active: value.replace("/timeline/", "")
-            })
-        })
-    }
+  checkActive = () => {
+    const { location } = history
+    const { pathname } = location
+    const pathName$ = of(pathname)
+    pathName$.subscribe((value: string) => {
+      this.setState({
+        active: value.replace("/timeline/", "")
+      })
+    })
+  }
 
-    handleClickNav = (nav: TopicType) => {
-        const { name } = nav
-        this.setState({
-            active: name
-        })
-        history.push(`/timeline/${name}`)
-    }
+  handleClickNav = (nav: TopicType) => {
+    const { name } = nav
+    this.setState({
+      active: name
+    })
+    history.push(`/timeline/${name}`)
+  }
 
-    render() {
-        let { active } = this.state
+  render() {
+    let { active } = this.state
 
-        return (
-            <div className="home">
-                <NavList
-                    active={active}
-                    list={navListData}
-                    clickNav={this.handleClickNav}
-                />
-                <div className="main-content">
-                    <Switch>
-                        {navListData.map((item: TopicType) => (
-                            <Route name={item.name} component={BlogList} />
-                        ))}
-                    </Switch>
-                </div>
-            </div>
-        )
-    }
+    return (
+      <div className="home">
+        <NavList
+          active={active}
+          list={navListData}
+          clickNav={this.handleClickNav}
+        />
+        <div className="main-content">
+          <Switch>
+            {navListData.map((item: TopicType) => (
+              <Route key={item.id} name={item.name} component={BlogList} />
+            ))}
+          </Switch>
+        </div>
+      </div>
+    )
+  }
 }

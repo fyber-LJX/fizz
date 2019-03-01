@@ -1,8 +1,8 @@
 {
-  "editor.tabSize": 4,
+  "editor.tabSize": 2,
   "editor.formatOnSave": true,
   "prettier.semi": false,
-  "prettier.tabWidth": 4,
+  "prettier.tabWidth": 2,
   "search.exclude": {
     // 搜索黑名单
     "**/node_modules": true,
