@@ -67,7 +67,7 @@ export const entryList: Array<BlogEntry> = [
       "http://upload-images.jianshu.io/upload_images/1812867-9e43887f3d1b3faa.jpg"
   },
   {
-    id: 15,
+    id: 151,
     title: "吴星昊",
     author: "吴星昊",
     category: "javascript",
@@ -80,7 +80,7 @@ export const entryList: Array<BlogEntry> = [
       "http://upload-images.jianshu.io/upload_images/1812867-9e43887f3d1b3faa.jpg"
   },
   {
-    id: 16,
+    id: 162,
     title: "吴星昊",
     author: "string",
     category: "javascripting",
@@ -93,7 +93,7 @@ export const entryList: Array<BlogEntry> = [
       "http://upload-images.jianshu.io/upload_images/1812867-9e43887f3d1b3faa.jpg"
   },
   {
-    id: 15,
+    id: 153,
     title: "string",
     author: "吴星昊",
     category: "javascript",
@@ -106,7 +106,7 @@ export const entryList: Array<BlogEntry> = [
       "http://upload-images.jianshu.io/upload_images/1812867-9e43887f3d1b3faa.jpg"
   },
   {
-    id: 16,
+    id: 164,
     title: "吴星昊",
     author: "吴星昊",
     category: "javascript",

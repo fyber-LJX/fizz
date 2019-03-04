@@ -3,7 +3,7 @@ import { BlogEntry } from "src/shared/models/blog"
 import WithScrollFixed from "./../../../../components/scroll-fixed"
 
 interface PropsType {
-  list: Array<BlogEntry>
+  list?: Array<BlogEntry>
 }
 
 class PopularBox extends React.Component<PropsType> {
@@ -55,4 +55,8 @@ class PopularBox extends React.Component<PropsType> {
   }
 }
 
-export default WithScrollFixed(PopularBox)
+export default WithScrollFixed({
+  App: PopularBox,
+  top: 80,
+  threshold: 95
+})
