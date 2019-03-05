@@ -13,7 +13,7 @@ class PopularBox extends React.Component<PropsType> {
       <div className="popular">
         <h3
           className="sona-font-18 sona-pl-10 sona-border-B1"
-          style={{ height: "60px" }}
+          style={{ height: "60px", lineHeight: "60px" }}
         >
           更多受欢迎的作品
         </h3>
@@ -57,6 +57,6 @@ class PopularBox extends React.Component<PropsType> {
 
 export default WithScrollFixed({
   App: PopularBox,
-  top: 80,
+  top: 45,
   threshold: 95
 })

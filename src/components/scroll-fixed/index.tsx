@@ -58,7 +58,7 @@ const WithScrollFixed = (options: ScrollParams) => {
         <div className="virtial-nav-parent">
           <div
             className={`scroll-container ${fixed ? "fixed" : ""}`}
-            style={{ zIndex, top: fixed ? top + 15 : 0 }}
+            style={{ zIndex, top: fixed ? top : 0 }}
           >
             <App ref={this.scrollRef} {...this.props} />
           </div>

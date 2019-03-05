@@ -42,8 +42,6 @@ class Header extends React.Component {
     keyWord: ""
   }
 
-  private searchInout: React.RefObject<HTMLInputElement> = React.createRef()
-
   componentDidMount() {
     const keyup$ = fromEvent(document, "keyup")
 
@@ -63,7 +61,8 @@ class Header extends React.Component {
       searching: searching
     })
     if (searching) {
-      const input = this.searchInout.current
+      const input: any = document.querySelector(".search-input>input")
+      console.log(input)
       input && input.focus()
     } else {
       this.setState({
