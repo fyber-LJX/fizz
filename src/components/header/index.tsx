@@ -73,7 +73,6 @@ class Header extends React.Component {
 
   handleChangeKeyWord = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { value } = event.target
-
     this.setState({
       keyWord: value
     })
