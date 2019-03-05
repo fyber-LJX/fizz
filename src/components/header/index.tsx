@@ -18,7 +18,7 @@ const headerConfig = [
   { to: "/timeline", role: 3, title: "首页" },
   { to: "/category", role: 3, title: "分类" },
   { to: "/column", role: 3, title: "专栏" },
-  { to: "/edit", role: 1, title: "编辑" },
+  { to: "/writer", role: 3, title: "写作" },
   { to: "/about", role: 3, title: "相关" }
 ]
 const source$ = from(headerConfig)

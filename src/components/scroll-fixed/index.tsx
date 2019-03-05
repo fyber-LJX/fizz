@@ -17,7 +17,7 @@ const WithScrollFixed = (options: ScrollParams) => {
   let { App, top = 0, zIndex = 9, threshold = 0 } = options
   return class ScrollFixed extends React.Component<PropsType> {
     scrollRef: React.RefObject<HTMLInputElement> = React.createRef()
-    navScroll$: any
+    navScrollsub: any
 
     state = {
       fixed: false
@@ -28,14 +28,15 @@ const WithScrollFixed = (options: ScrollParams) => {
     }
 
     componentWillUnmount() {
-      this.navScroll$ && this.navScroll$.unsubscribe()
+      // this.navScrollsub && this.navScrollsub.unsubscribe()
     }
 
     bindScrollToFixed = () => {
       const scrollRefDOM = this.scrollRef.current
       if (scrollRefDOM) {
-        this.navScroll$ = fromEvent(window, "scroll")
-        this.navScroll$.subscribe(this.listenerScroll)
+        const navScroll$ = fromEvent(window, "scroll")
+        this.navScrollsub = navScroll$.subscribe(this.listenerScroll)
+        console.log(this.navScrollsub)
       }
     }
 

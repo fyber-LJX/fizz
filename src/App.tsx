@@ -4,6 +4,7 @@ import "./App.scss"
 import Header from "./components/header"
 import Home from "./pages/home/index.connect"
 import Category from "./pages/category/index.connect"
+import Writer from "./pages/writer"
 
 class App extends React.Component {
   render() {
@@ -15,6 +16,7 @@ class App extends React.Component {
             {/* <Route exact={true} path='/' component={Home} /> */}
             <Route path="/timeline" component={Home} />
             <Route path="/category" component={Category} />
+            <Route path="/writer" component={Writer} />
           </Switch>
         </div>
       </div>
