@@ -10,7 +10,7 @@ interface StateType {
 
 export default class Writer extends React.Component<PropsType, StateType> {
   state: StateType = {
-    status: 2,
+    status: 1,
     article: `| First Header  | Second Header |
     | ------------- | ------------- |
     | Content Cell  | Content Cell  |
