@@ -3,22 +3,26 @@ import FormControl from "@material-ui/core/FormControl"
 import Input from "@material-ui/core/Input"
 import InputLabel from "@material-ui/core/InputLabel"
 import "./index.scss"
-import { Select, MenuItem } from "@material-ui/core"
+import { Select, MenuItem, Button } from "@material-ui/core"
 import { testPromise } from "src/fetch/test"
 import { CategoryItem } from "src/shared/models/category"
+import { from, interval, of } from "rxjs"
+import { switchMap, filter, catchError, throttleTime } from "rxjs/operators"
 
-// interface PropsType {}
-// interface StateType {
-//   name: string
-//   content: string
-//   category: string
-//   categoryList: Array<CategoryItem>
-//   tagName: string
-// }
+interface PropsType {
+  save: (options: Article) => void
+  setStatus: (value: number) => void
+}
+export type Article = {
+  name: string
+  content: string
+  category: string
+  tagName: string
+}
 
-const Edit = () => {
+const Edit = (props: PropsType) => {
+  const { save, setStatus } = props
   const [name, setName] = useState("")
-  const [content, setContent] = useState("")
   const [category, setCategory] = useState("")
   const [categoryList, setList] = useState([] as Array<CategoryItem>)
   const [tagName, setTagName] = useState("")
@@ -27,9 +31,38 @@ const Edit = () => {
     const categoryList = (await testPromise()) as Array<CategoryItem>
     setList(categoryList)
   }
+  const getArticle = () => {
+    const $content: HTMLDivElement | null = document.querySelector(".textarea")
+    return {
+      name,
+      content: $content ? $content.innerText : "",
+      category,
+      tagName
+    }
+  }
+
+  const saveBack = () => {
+    const source$ = interval(2000)
+    source$
+      .pipe(
+        switchMap(() =>
+          from(of(getArticle())).pipe(
+            filter((value: Article) => {
+              return value.content !== ""
+            }),
+            catchError((error: Error) => of(error))
+          )
+        ),
+        throttleTime(5000)
+      )
+      .subscribe((value: Article) => {
+        save(value), null, null
+      })
+  }
 
   useEffect(() => {
     getList()
+    saveBack()
   }, [])
 
   return (
@@ -71,16 +104,19 @@ const Edit = () => {
             }
           />
         </FormControl>
+        <Button
+          variant="contained"
+          className="fizz-back-primary"
+          onClick={() => setStatus(2)}
+          style={{ color: "#fff" }}
+        >
+          预览
+        </Button>
         <div
           contentEditable
           className="textarea"
-          onChange={(e: ChangeEvent<HTMLInputElement>) =>
-            setContent(e.target.value)
-          }
           suppressContentEditableWarning={true}
-        >
-          {content}
-        </div>
+        />
       </div>
       <div className="writer-content" />
     </div>

@@ -1,5 +1,6 @@
 import React from "react"
 import Remarkable from "remarkable"
+import { Article } from "../edit"
 const hljs = require("highlightjs")
 
 const md = new Remarkable()
@@ -22,21 +23,21 @@ md.set({
 })
 
 interface PropsType {
-  article: string
+  article: Article
 }
-interface StateType {}
 
-export default class Preview extends React.Component<PropsType, StateType> {
-  render() {
-    const { article } = this.props
-    const mdArticle = md.render(article)
-    console.log(md.render(article))
+const Preview = (props: PropsType) => {
+  const { article } = props
+  const { content } = article
+  const mdArticle = md.render(content)
+  console.log(md.render(content))
 
-    return (
-      <div
-        className="writer-preview"
-        dangerouslySetInnerHTML={{ __html: mdArticle }}
-      />
-    )
-  }
+  return (
+    <div
+      className="writer-preview"
+      dangerouslySetInnerHTML={{ __html: mdArticle }}
+    />
+  )
 }
+
+export default Preview
