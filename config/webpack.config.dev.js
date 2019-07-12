@@ -172,12 +172,7 @@ module.exports = {
             use: [
               require.resolve("style-loader"),
               {
-                loader: require.resolve("css-loader"),
-                options: {
-                  importLoaders: 1,
-                  modules: true,
-                  localIdentName: "[hash:base64:6]"
-                }
+                loader: require.resolve("css-loader")
               },
               {
                 loader: require.resolve("postcss-loader"),
@@ -218,13 +213,12 @@ module.exports = {
                 loader: require.resolve("sass-resources-loader"),
                 options: {
                   resources: [
-                    path.resolve(
-                      __dirname,
-                      "./../node_modules/league_sona/src/index.scss"
-                    ),
+                    // path.resolve(
+                    //   __dirname,
+                    //   // "./../node_modules/league_sona/src/index.scss"
+                    // ),
                     path.resolve(__dirname, "./../src/styles/theme.scss"),
-                    path.resolve(__dirname, "./../src/styles/mixin.scss"),
-                    path.resolve(__dirname, "./../src/styles/index.scss")
+                    path.resolve(__dirname, "./../src/styles/mixin.scss")
                   ]
                 }
               }

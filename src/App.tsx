@@ -1,21 +1,21 @@
 import React from "react"
-import styles from "./app.scss"
 import Header from "./components/header"
 import { Switch, Route } from "react-router"
 import { HomeComponent } from "./pages"
+import styles from "./styles/app.scss"
 
-class App extends React.Component {
-  render() {
-    return (
-      <div className={styles.mainContent}>
-        <Header />
+const App = () => {
+  return (
+    <div className={styles.mainContent}>
+      <Header />
+      <div className={styles.content}>
         <Switch>
           <Route exact path="/" component={HomeComponent} />
           <Route strict path="/timeline" component={HomeComponent} />
         </Switch>
       </div>
-    )
-  }
+    </div>
+  )
 }
 
 export default App

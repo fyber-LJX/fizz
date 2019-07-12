@@ -1,0 +1,18 @@
+.home {
+  display: flex;
+
+  .content {
+    margin-top: 20px;
+  }
+
+  article {
+    display: flex;
+    flex-wrap: wrap;
+    width: 750px;
+    margin-right: 20px;
+  }
+
+  aside {
+    width: calc(1080px - 20px - 750px);
+  }
+}

@@ -5,6 +5,7 @@ import registerServiceWorker from "./registerServiceWorker"
 import { BrowserRouter } from "react-router-dom"
 import { Router } from "react-router"
 import { createBrowserHistory } from "history"
+import "./styles/index.scss"
 
 const history = createBrowserHistory()
 

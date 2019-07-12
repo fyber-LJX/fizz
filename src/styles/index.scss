@@ -1,26 +1,41 @@
-html {
-  height: 100%;
-  // font: 14px/1.5 "Helvetica Neue",Helvetica,Arial,"Microsoft Yahei","Hiragino Sans GB","Heiti SC","WenQuanYi Micro Hei",sans-serif;
-  font: 14px/1.5 "Roboto, Noto, sans-serif";
-  color: $primary-color;
+@font-face {
+  font-family: "iconfont"; /* project id 1291376 */
+  src: url("//at.alicdn.com/t/font_1291376_hmyev5c1w0r.eot");
+  src: url("//at.alicdn.com/t/font_1291376_hmyev5c1w0r.eot?#iefix")
+      format("embedded-opentype"),
+    url("//at.alicdn.com/t/font_1291376_hmyev5c1w0r.woff2") format("woff2"),
+    url("//at.alicdn.com/t/font_1291376_hmyev5c1w0r.woff") format("woff"),
+    url("//at.alicdn.com/t/font_1291376_hmyev5c1w0r.ttf") format("truetype"),
+    url("//at.alicdn.com/t/font_1291376_hmyev5c1w0r.svg#iconfont") format("svg");
 }
-
-img {
-  width: 100%;
-}
-
 :global {
-  .icon {
-    width: 1em;
-    height: 1em;
-    vertical-align: -0.15em;
-    fill: currentColor;
-    overflow: hidden;
+  html {
+    height: 100%;
+    // font: 14px/1.5 "Helvetica Neue",Helvetica,Arial,"Microsoft Yahei","Hiragino Sans GB","Heiti SC","WenQuanYi Micro Hei",sans-serif;
+    font: 14px/1.5 "Roboto, Noto, sans-serif";
+    color: $text-color;
+  }
+
+  img {
+    width: 100%;
   }
 
   a {
     color: $text-color;
     text-decoration: none;
+  }
+  .iconfont {
+    font-family: "iconfont" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+    color: $disabled-color;
+
+    &.active {
+      color: $thrid-color;
+    }
   }
 }
 
