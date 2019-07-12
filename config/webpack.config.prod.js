@@ -228,7 +228,28 @@ module.exports = {
           },
           {
             test: /\.scss$/,
-            loaders: ["style-loader", "css-loader", "sass-loader"]
+            loaders: [
+              "style-loader",
+              {
+                loader: require.resolve("css-loader"),
+                options: {
+                  minimize: true,
+                  sourceMap: shouldUseSourceMap,
+                  importLoaders: 1,
+                  modules: true,
+                  localIdentName: "Fizz__[name]__[local]__[hash:base64:6]"
+                }
+              },
+              "sass-loader",
+              {
+                loader: require.resolve("sass-resources-loader"),
+                options: {
+                  resources: [
+                    path.resolve(__dirname, "./../src/styles/theme.scss")
+                  ]
+                }
+              }
+            ]
           },
           // "file" loader makes sure assets end up in the `build` folder.
           // When you `import` an asset, you get its filename.

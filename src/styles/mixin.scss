@@ -1,0 +1,4 @@
+@mixin box-shadow($color: rgba(0, 0, 0, 0.15)) {
+  box-shadow: 0 10px 40px -10px $color;
+  transition: box-shadow 0.3s;
+}

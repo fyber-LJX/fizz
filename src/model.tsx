@@ -1,16 +1,14 @@
-import React from 'react';
+import React from "react"
 
-interface PropsType {};
-interface StateType {};
+interface PropsType {}
+interface StateType {}
 
 export default class Model extends React.Component<PropsType, StateType> {
-    constructor(props: PropsType) {
-        super(props);
-    }
+  constructor(props: PropsType) {
+    super(props)
+  }
 
-    render() {
-        return (
-            <div className="main-content"></div>
-        )
-    }
+  render() {
+    return <div className="main-content" />
+  }
 }

@@ -1,14 +1,18 @@
-$primary-color: #b18edc; // 全局主色
-$link-color: #b18edc; // 链接色
-$second-color: #f3aa79; // 成功色
-$thrid-color: #eb93a4;
-$heading-color: rgba(87, 82, 83, 1); // 标题色
-$text-color: rgba(87, 82, 83, 1); // 主文本色
-$text-color-secondary: rgba(87, 82, 83, 0.85); // 次文本色
-$disabled-color: rgba(87, 82, 83, 0.45); // 失效色
-$border-color-base: rgba(164, 162, 166, 0.3); // 边框色
-$box-shadow-base: 0 2px 8px rgba(0, 0, 0, 0.15); // 浮层阴影
+$primary-color: #08d9d6; // 全局主色
+$link-color: #08d9d6; // 链接色
+// 副色系
+$second-color: #ffde7d;
+$thrid-color: #f6416c;
+$fourth-color: #f8f3d4;
+$heading-color: #232931; // 标题色
+$text-color: #263646; // 主文本色
+$text-color-secondary: #899bb4; // 次文本色
+$disabled-color: rgba(0, 0, 0, 0.25); // 失效色
+$border-color-base: #e9f2f9; // 边框色
+$box-shadow-base: 0 2px 8px rgba(49, 43, 43, 0.15); // 浮层阴影
 
 // font
 $font-size-base: 14px; // 主字号
-$border-radius-base: 15px; // 组件/浮层圆角
+$border-radius-base: 4px; // 组件/浮层圆角
+
+$main-width: 1080px;

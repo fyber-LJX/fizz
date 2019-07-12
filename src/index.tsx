@@ -3,12 +3,17 @@ import ReactDOM from "react-dom"
 import App from "./App"
 import registerServiceWorker from "./registerServiceWorker"
 import { BrowserRouter } from "react-router-dom"
-import "./styles/index.scss"
+import { Router } from "react-router"
+import { createBrowserHistory } from "history"
+
+const history = createBrowserHistory()
 
 const Index = () => {
   return (
     <BrowserRouter>
-      <App />
+      <Router history={history}>
+        <App />
+      </Router>
     </BrowserRouter>
   )
 }

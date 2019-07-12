@@ -218,7 +218,13 @@ module.exports = {
                 loader: require.resolve("sass-resources-loader"),
                 options: {
                   resources: [
-                    path.resolve(__dirname, "./../src/styles/theme.scss")
+                    path.resolve(
+                      __dirname,
+                      "./../node_modules/league_sona/src/index.scss"
+                    ),
+                    path.resolve(__dirname, "./../src/styles/theme.scss"),
+                    path.resolve(__dirname, "./../src/styles/mixin.scss"),
+                    path.resolve(__dirname, "./../src/styles/index.scss")
                   ]
                 }
               }
