@@ -9,4 +9,8 @@ const HomeComponent = loadable(() => import("./home"), {
   fallback: <Loading />
 })
 
-export { HomeComponent }
+const WriteComponent = loadable(() => import("./write"), {
+  fallback: <Loading />
+})
+
+export { HomeComponent, WriteComponent }

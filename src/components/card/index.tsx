@@ -1,6 +1,7 @@
 import styles from "./index.scss"
 import React from "react"
 import { NavLink } from "react-router-dom"
+import dayjs from "dayjs"
 
 export interface CardType {
   title: string
@@ -26,20 +27,36 @@ const Card = (props: CardType) => {
     view,
     agreeing,
     agreeNumber,
-    // time,
+    time,
     liking,
     likeNumber,
-    // author,
-    // tagName,
+    author,
+    tagName,
     bid
   } = props
 
   return (
     <div className={styles.card}>
       <NavLink to={`/post/${bid}`}>
-        <div className="left">
-          <h4>{title}</h4>
-          <h5>{describe}</h5>
+        <div className={styles.cardTop}>
+          <div className="left">
+            <h5>{title}</h5>
+            <h6>{describe}</h6>
+          </div>
+          <div className={styles.right}>
+            <img src={img} alt="" />
+          </div>
+        </div>
+
+        <div className={styles.cardBottom}>
+          <div className={styles.author}>
+            <span>{tagName}</span>
+            <span>·</span>
+            <span>{author}</span>
+            <span>·</span>
+            <span>{dayjs(time).format("YYYY.MM.DD")}</span>
+          </div>
+
           <div className={styles.cardCount}>
             <div>
               <i className="iconfont">&#xe88b;</i>
@@ -62,9 +79,6 @@ const Card = (props: CardType) => {
               <span>{likeNumber}</span>
             </div>
           </div>
-        </div>
-        <div className={styles.right}>
-          <img src={img} alt="" />
         </div>
       </NavLink>
     </div>

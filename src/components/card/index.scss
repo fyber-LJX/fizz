@@ -2,9 +2,19 @@
   width: calc((750px - 48px) / 2);
   margin: 0 24px 24px 0;
 
-  a {
+  .cardTop {
     display: flex;
     justify-content: space-between;
+  }
+
+  .cardBottom {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  a {
+    display: flex;
+    flex-direction: column;
 
     transition: all 0.2s ease-out;
     padding: 16px;
@@ -15,13 +25,33 @@
 
     &:hover {
       box-shadow: 0 6px 16px 0 #d6e0e8;
+
+      h5 {
+        color: $primary-color;
+      }
+
+      h6 {
+        color: $text-color;
+      }
+
+      .cardCount > div {
+        color: $text-color-secondary;
+      }
     }
   }
 
-  h4 {
-    font-size: 16px;
+  h5 {
+    font-size: 14px;
     color: $heading-color;
-    margin-bottom: 10px;
+    line-height: 26px;
+    transition: all 0.2s;
+  }
+
+  h6 {
+    line-height: 22px;
+    color: $text-color-secondary;
+    font-size: 12px;
+    transition: all 0.2s;
   }
 
   .right {
@@ -33,7 +63,40 @@
     }
   }
 
+  .count {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .author,
   .cardCount {
     display: flex;
+    font-size: 12px;
+    line-height: 18px;
+    color: $disabled-color;
+  }
+
+  .author {
+    span {
+      margin-right: 3px;
+    }
+  }
+
+  .cardCount {
+    & > div {
+      margin-right: 5px;
+
+      span {
+        transition: all 0.2s;
+      }
+
+      &:hover {
+        i {
+          color: inherit;
+          transition: all 0.2s;
+        }
+      }
+    }
   }
 }

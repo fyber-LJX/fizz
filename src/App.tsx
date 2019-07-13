@@ -1,7 +1,7 @@
 import React from "react"
 import Header from "./components/header"
 import { Switch, Route } from "react-router"
-import { HomeComponent } from "./pages"
+import { HomeComponent, WriteComponent } from "./pages"
 import styles from "./styles/app.scss"
 
 const App = () => {
@@ -12,6 +12,7 @@ const App = () => {
         <Switch>
           <Route exact path="/" component={HomeComponent} />
           <Route strict path="/timeline" component={HomeComponent} />
+          <Route path="/write" component={WriteComponent} />
         </Switch>
       </div>
     </div>

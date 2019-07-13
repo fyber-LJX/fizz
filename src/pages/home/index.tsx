@@ -14,9 +14,9 @@ const mockData = [
     time: 1231,
     likeNumber: 1231,
     liking: false,
-    author: "",
+    author: "fyber",
     tag: 1231,
-    tagName: "",
+    tagName: "Javascript",
     bid: 93818
   },
   {
@@ -30,25 +30,24 @@ const mockData = [
     time: 1231,
     likeNumber: 1231,
     liking: false,
-    author: "",
+    author: "吴星昊",
     tag: 1231,
-    tagName: "",
+    tagName: "Java",
     bid: 93818
   },
   {
     title: "你不知道的JavaScript",
     describe: "你知道的Java",
-    img:
-      "//t16img.yangkeduo.com/mms_static/d951af411dd5e7b13aada3d7aa001097.png",
+    img: "./../../../WechatIMG1418.png",
     view: 1231,
     agreeNumber: 1231,
     agreeing: true,
     time: 1231,
     likeNumber: 1231,
     liking: true,
-    author: "",
+    author: "徐奇",
     tag: 1231,
-    tagName: "",
+    tagName: "React",
     bid: 93818
   }
 ]
