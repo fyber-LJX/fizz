@@ -59,7 +59,7 @@ const Card = (props: CardType) => {
 
           <div className={styles.cardCount}>
             <div>
-              <i className="iconfont">&#xe88b;</i>
+              <i className="iconfont">&#xe633;</i>
               <span>{view}</span>
             </div>
             <div>

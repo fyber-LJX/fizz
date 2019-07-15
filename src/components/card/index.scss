@@ -34,9 +34,9 @@
         color: $text-color;
       }
 
-      .cardCount > div {
-        color: $text-color-secondary;
-      }
+      // .cardCount > .author {
+      //   color: $text-color-secondary;
+      // }
     }
   }
 
@@ -92,6 +92,7 @@
       }
 
       &:hover {
+        color: $text-color-secondary;
         i {
           color: inherit;
           transition: all 0.2s;

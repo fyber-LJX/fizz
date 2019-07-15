@@ -1,12 +1,12 @@
 @font-face {
   font-family: "iconfont"; /* project id 1291376 */
-  src: url("//at.alicdn.com/t/font_1291376_g2qmx4k0e1v.eot");
-  src: url("//at.alicdn.com/t/font_1291376_g2qmx4k0e1v.eot?#iefix")
+  src: url("//at.alicdn.com/t/font_1291376_c3gpdlcv1y.eot");
+  src: url("//at.alicdn.com/t/font_1291376_c3gpdlcv1y.eot?#iefix")
       format("embedded-opentype"),
-    url("//at.alicdn.com/t/font_1291376_g2qmx4k0e1v.woff2") format("woff2"),
-    url("//at.alicdn.com/t/font_1291376_g2qmx4k0e1v.woff") format("woff"),
-    url("//at.alicdn.com/t/font_1291376_g2qmx4k0e1v.ttf") format("truetype"),
-    url("//at.alicdn.com/t/font_1291376_g2qmx4k0e1v.svg#iconfont") format("svg");
+    url("//at.alicdn.com/t/font_1291376_c3gpdlcv1y.woff2") format("woff2"),
+    url("//at.alicdn.com/t/font_1291376_c3gpdlcv1y.woff") format("woff"),
+    url("//at.alicdn.com/t/font_1291376_c3gpdlcv1y.ttf") format("truetype"),
+    url("//at.alicdn.com/t/font_1291376_c3gpdlcv1y.svg#iconfont") format("svg");
 }
 @font-face {
   font-family: "fyber_font";
@@ -49,6 +49,8 @@
     -moz-osx-font-smoothing: grayscale;
     color: $disabled-color;
     user-select: none;
+    transition: all 0.2s;
+    cursor: pointer;
 
     &.active {
       color: $thrid-color !important;

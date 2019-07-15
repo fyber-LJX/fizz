@@ -2,6 +2,7 @@ import styles from "./index.scss"
 import React, { useContext } from "react"
 import SignCTX from "./share/context"
 import { SIGN_STATUS_ACTION, REGISTER_ACTION } from "./share/reducer"
+import SignFooter from "./footer"
 
 const Register = () => {
   const { store, dispatch } = useContext(SignCTX)
@@ -20,7 +21,7 @@ const Register = () => {
           登录
         </span>
       </div>
-      <i className="iconfont">&#xe86e;</i>
+      <i className={`iconfont ${styles.close}`}>&#xe86e;</i>
       <h4>注册</h4>
       <div className={styles.content}>
         <div className={styles.formRow}>
@@ -62,12 +63,26 @@ const Register = () => {
               })
             }}
           />
-          {hiddenPWD ? (
-            <i className="iconfont">&#xe901;</i>
-          ) : (
-            <i className="iconfont">&#xe899;</i>
-          )}
+          <div
+            className={styles.pwdIcon}
+            onClick={() => {
+              dispatch({
+                type: SIGN_STATUS_ACTION,
+                payload: { hiddenPWD: !hiddenPWD }
+              })
+            }}
+          >
+            {hiddenPWD ? (
+              <i className="iconfont">&#xe901;</i>
+            ) : (
+              <i className="iconfont">&#xe899;</i>
+            )}
+          </div>
         </div>
+        <div className={styles.formRow}>
+          <button>登录</button>
+        </div>
+        <SignFooter />
       </div>
     </div>
   )

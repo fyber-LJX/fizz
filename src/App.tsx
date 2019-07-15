@@ -14,7 +14,7 @@ const App = () => {
           <Route strict path="/timeline" component={HomeComponent} />
           <Route path="/write" component={WriteComponent} />
         </Switch>
-        <SignComponent />
+        {false && <SignComponent />}
       </div>
     </div>
   )
