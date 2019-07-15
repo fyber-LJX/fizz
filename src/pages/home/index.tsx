@@ -51,6 +51,21 @@ const mockData = [
     bid: 93818
   }
 ]
+
+const Tags = [
+  {
+    name: "React",
+    id: 9
+  },
+  {
+    name: "Java",
+    id: 12
+  },
+  {
+    name: "JavaSctipt",
+    id: 999
+  }
+]
 const HomeComponent = () => {
   return (
     <div className={style.home}>
@@ -60,7 +75,25 @@ const HomeComponent = () => {
             <Card {...item} />
           ))}
         </article>
-        <aside />
+        <aside>
+          <div className={style.hot}>
+            <h4>热门标签</h4>
+            <div className={style.hotItem}>
+              {Tags.map(item => (
+                <div className={style.tag}>{item.name}</div>
+              ))}
+            </div>
+          </div>
+
+          <div className={style.hot}>
+            <h4>热门文章</h4>
+            <div className={style.hotItem}>
+              {Tags.map(item => (
+                <div className={style.tag}>{item.name}</div>
+              ))}
+            </div>
+          </div>
+        </aside>
       </div>
     </div>
   )
