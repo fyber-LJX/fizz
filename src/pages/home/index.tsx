@@ -1,6 +1,7 @@
 import style from "./index.scss"
 import React from "react"
 import Card from "src/components/card"
+import TopNav from "src/components/top_nav"
 
 const mockData = [
   {
@@ -66,9 +67,45 @@ const Tags = [
     id: 999
   }
 ]
+
+const list = [
+  {
+    name: "推荐",
+    id: 0
+  },
+  {
+    name: "前端",
+    id: 4
+  },
+  {
+    name: "后端",
+    id: 5
+  },
+  {
+    name: "人工智能",
+    id: 6
+  },
+  {
+    name: "阅读",
+    id: 7
+  },
+  {
+    name: "算法",
+    id: 8
+  },
+  {
+    name: "数据结构",
+    id: 9
+  },
+  {
+    name: "数据库",
+    id: 10
+  }
+]
 const HomeComponent = () => {
   return (
     <div className={style.home}>
+      <TopNav list={list} />
       <div className={style.content}>
         <article>
           {mockData.map(item => (
