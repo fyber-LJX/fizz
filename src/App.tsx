@@ -1,27 +1,23 @@
-import * as React from "react"
-import { Route, Switch } from "react-router-dom"
-import "./App.scss"
+import React from "react"
 import Header from "./components/header"
-import Home from "./pages/home/index.connect"
-import Category from "./pages/category/index.connect"
-import Writer from "./pages/writer"
+import { Switch, Route } from "react-router"
+import { HomeComponent, WriteComponent, SignComponent } from "./pages"
+import styles from "./styles/app.scss"
 
-class App extends React.Component {
-  render() {
-    return (
-      <div>
-        <div className="fizz sona-flex-column">
-          <Header />
-          <Switch>
-            {/* <Route exact={true} path='/' component={Home} /> */}
-            <Route path="/timeline" component={Home} />
-            <Route path="/category" component={Category} />
-            <Route path="/writer" component={Writer} />
-          </Switch>
-        </div>
+const App = () => {
+  return (
+    <div className={styles.mainContent}>
+      <Header />
+      <div className={styles.content}>
+        <Switch>
+          <Route exact path="/" component={HomeComponent} />
+          <Route strict path="/timeline" component={HomeComponent} />
+          <Route path="/write" component={WriteComponent} />
+        </Switch>
+        {false && <SignComponent />}
       </div>
-    )
-  }
+    </div>
+  )
 }
 
 export default App

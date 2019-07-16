@@ -1,53 +1,71 @@
-@import "league_sona/src/index.scss";
-@import "./color.scss";
-html {
-  height: 100%;
-  // font: 14px/1.5 "Helvetica Neue",Helvetica,Arial,"Microsoft Yahei","Hiragino Sans GB","Heiti SC","WenQuanYi Micro Hei",sans-serif;
-  font: 14px/1.5 "Roboto, Noto, sans-serif";
-  color: #212121;
+@font-face {
+  font-family: "iconfont"; /* project id 1291376 */
+  src: url("//at.alicdn.com/t/font_1291376_c3gpdlcv1y.eot");
+  src: url("//at.alicdn.com/t/font_1291376_c3gpdlcv1y.eot?#iefix")
+      format("embedded-opentype"),
+    url("//at.alicdn.com/t/font_1291376_c3gpdlcv1y.woff2") format("woff2"),
+    url("//at.alicdn.com/t/font_1291376_c3gpdlcv1y.woff") format("woff"),
+    url("//at.alicdn.com/t/font_1291376_c3gpdlcv1y.ttf") format("truetype"),
+    url("//at.alicdn.com/t/font_1291376_c3gpdlcv1y.svg#iconfont") format("svg");
+}
+@font-face {
+  font-family: "fyber_font";
+  font-display: swap;
+  src: url("//at.alicdn.com/t/webfont_2rf1i6hnv9d.eot"); /* IE9*/
+  src: url("//at.alicdn.com/t/webfont_2rf1i6hnv9d.eot?#iefix")
+      format("embedded-opentype"),
+    /* IE6-IE8 */ url("//at.alicdn.com/t/webfont_2rf1i6hnv9d.woff2")
+      format("woff2"),
+    url("//at.alicdn.com/t/webfont_2rf1i6hnv9d.woff") format("woff"),
+    /* chrome、firefox */ url("//at.alicdn.com/t/webfont_2rf1i6hnv9d.ttf")
+      format("truetype"),
+    /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+      url("//at.alicdn.com/t/webfont_2rf1i6hnv9d.svg#Alibaba-PuHuiTi-Regular")
+      format("svg"); /* iOS 4.1- */
+}
+:global {
+  html {
+    height: 100%;
+    // font: 14px/1.5 "Helvetica Neue",Helvetica,Arial,"Microsoft Yahei","Hiragino Sans GB","Heiti SC","WenQuanYi Micro Hei",sans-serif;
+    font: 14px/1.5 "Helvetica Neue,PingFang SC,Microsoft YaHei";
+    font-family: "fyber_font";
+    color: $text-color;
+  }
+
+  img {
+    width: 100%;
+  }
+
+  a {
+    color: $text-color;
+    text-decoration: none;
+  }
+  .iconfont {
+    font-family: "iconfont" !important;
+    font-size: inherit;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+    color: $disabled-color;
+    user-select: none;
+    transition: all 0.2s;
+    cursor: pointer;
+
+    &.active {
+      color: $thrid-color !important;
+    }
+
+    &:hover {
+      color: $text-color-secondary;
+    }
+  }
+
+  input:focus {
+    border-color: $primary-color !important;
+  }
 }
 
-img {
-  width: 100%;
-}
-
-// 以下为UI约束
-
-.font-main-color {
-  color: #212121;
-}
-
-.main-width {
+%main-content {
   width: 1100px;
-}
-
-.fizz-primary {
-  @extend %fizz-primary;
-}
-.fizz-secondary {
-  @extend %fizz-secondary;
-}
-.fizz-back-primary {
-  @extend %fizz-back-primary;
-}
-.fizz-back-secondary {
-  @extend %fizz-back-secondary;
-}
-.fizz-font-primary {
-  @extend %fizz-font-primary;
-}
-.fizz-font-secondary {
-  @extend %fizz-font-secondary;
-}
-.fizz-font-thead {
-  @extend %fizz-font-thead;
-}
-
-.main-content {
-  width: 1100px;
-  margin: 80px auto;
-}
-.main-z-content {
-  width: 1100px;
-  margin: 30px auto;
 }
