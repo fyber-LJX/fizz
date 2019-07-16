@@ -73,5 +73,18 @@ header {
 
   .user {
     width: 200px;
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: flex-end;
+
+    i {
+      font-size: 24px;
+      margin-left: 20px;
+
+      &:hover {
+        color: $second-color;
+      }
+    }
   }
 }

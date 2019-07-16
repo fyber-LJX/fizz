@@ -3,9 +3,12 @@ import React, { useContext } from "react"
 import SignCTX from "./share/context"
 import { SIGN_IN_ACTION, SIGN_STATUS_ACTION } from "./share/reducer"
 import SignFooter from "./footer"
+import FizzCTX from "src/share/context"
+import { CHANGE_STATUS } from "src/share/reducer"
 
 const SignIn = () => {
   const { store, dispatch } = useContext(SignCTX)
+  const { dispatch: fizzDispatch } = useContext(FizzCTX)
   const { signin, status } = store
   const { username, password } = signin
   const { hiddenPWD } = status
@@ -21,7 +24,14 @@ const SignIn = () => {
           注册
         </span>
       </div>
-      <i className={`iconfont ${styles.close}`}>&#xe86e;</i>
+      <i
+        onClick={() =>
+          fizzDispatch({ type: CHANGE_STATUS, payload: { showLogin: false } })
+        }
+        className={`iconfont ${styles.close}`}
+      >
+        &#xe86e;
+      </i>
       <h4>登录</h4>
       <div className={styles.content}>
         <div className={styles.formRow}>

@@ -1,6 +1,7 @@
 import React from "react"
 import { NavLink } from "react-router-dom"
 import styles from "./index.scss"
+import LoginGurad from "../login_guard"
 
 const Header = () => {
   return (
@@ -19,7 +20,14 @@ const Header = () => {
           <input type="text" maxLength={20} placeholder="找寻你的最爱～" />
           <i className="iconfont">&#xe870;</i>
         </div>
-        <div className={styles.user} />
+        <div className={styles.user}>
+          <i className="iconfont">&#xe871;</i>
+          <div>
+            <LoginGurad>
+              <i className="iconfont">&#xe8a0;</i>
+            </LoginGurad>
+          </div>
+        </div>
       </div>
     </header>
   )
