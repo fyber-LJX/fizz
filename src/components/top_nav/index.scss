@@ -13,6 +13,12 @@ nav.topnav {
   padding: 0 calc((100vw - 1080px) / 2);
 
   .navlink {
-    margin-right: 20px;
+    padding-right: 20px;
+    transition: all 0.2s;
+
+    &.active,
+    &:hover {
+      color: $primary-color;
+    }
   }
 }

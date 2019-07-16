@@ -7,10 +7,16 @@
   }
 
   article {
-    display: flex;
-    flex-wrap: wrap;
+    // display: flex;
+    // flex-wrap: wrap;
     width: 750px;
     // margin-right: 20px;
+
+    .cardBox {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+    }
   }
 
   aside {

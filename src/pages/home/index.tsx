@@ -2,6 +2,7 @@ import style from "./index.scss"
 import React from "react"
 import Card from "src/components/card"
 import TopNav from "src/components/top_nav"
+import QueueAnim from "rc-queue-anim"
 
 const mockData = [
   {
@@ -71,35 +72,43 @@ const Tags = [
 const list = [
   {
     name: "推荐",
-    id: 0
+    id: 0,
+    path: "recommended"
   },
   {
     name: "前端",
-    id: 4
+    id: 4,
+    path: "frontend"
   },
   {
     name: "后端",
-    id: 5
+    id: 5,
+    path: "backend"
   },
   {
     name: "人工智能",
-    id: 6
+    id: 6,
+    path: "ai"
   },
   {
     name: "阅读",
-    id: 7
+    id: 7,
+    path: "read"
   },
   {
     name: "算法",
-    id: 8
+    id: 8,
+    path: "algorithm"
   },
   {
     name: "数据结构",
-    id: 9
+    id: 9,
+    path: "structure"
   },
   {
     name: "数据库",
-    id: 10
+    id: 10,
+    path: "database"
   }
 ]
 const HomeComponent = () => {
@@ -108,9 +117,11 @@ const HomeComponent = () => {
       <TopNav list={list} />
       <div className={style.content}>
         <article>
-          {mockData.map(item => (
-            <Card {...item} />
-          ))}
+          <QueueAnim className={style.cardBox}>
+            {mockData.map(item => (
+              <Card {...item} key={item.bid} />
+            ))}
+          </QueueAnim>
         </article>
         <aside>
           <div className={style.hot}>

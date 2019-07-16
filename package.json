@@ -20,6 +20,8 @@
     "promise": "8.0.1",
     "qs": "^6.6.0",
     "raf": "3.4.0",
+    "rc-queue-anim": "^1.6.12",
+    "rc-tween-one": "^2.4.1",
     "react": "^16.8.4",
     "react-css-modules": "^4.7.9",
     "react-dev-utils": "^5.0.2",
@@ -43,8 +45,6 @@
     "test": "node scripts/test.js --env=jsdom"
   },
   "devDependencies": {
-    "postcss-flexbugs-fixes": "3.2.0",
-    "postcss-loader": "2.0.8",
     "@types/graphql": "^14.0.7",
     "@types/jest": "^23.3.12",
     "@types/loadable__component": "^5.10.0",
@@ -73,6 +73,8 @@
     "html-webpack-plugin": "2.29.0",
     "jest": "20.0.4",
     "node-sass": "^4.11.0",
+    "postcss-flexbugs-fixes": "3.2.0",
+    "postcss-loader": "2.0.8",
     "sass-loader": "^7.1.0",
     "sass-resources-loader": "^2.0.1",
     "source-map-loader": "^0.2.1",
