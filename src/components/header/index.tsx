@@ -7,7 +7,7 @@ const Header = () => {
     <header>
       <div className={styles.header}>
         <div className={styles.logo} />
-        <nav>
+        <nav className={styles.headerNav}>
           <NavLink activeClassName={styles.active} to="/timeline">
             首页
           </NavLink>
@@ -15,7 +15,11 @@ const Header = () => {
             写文章
           </NavLink>
         </nav>
-        <div className="user" />
+        <div className={styles.search}>
+          <input type="text" maxLength={20} placeholder="找寻你的最爱～" />
+          <i className="iconfont">&#xe870;</i>
+        </div>
+        <div className={styles.user} />
       </div>
     </header>
   )

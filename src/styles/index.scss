@@ -60,6 +60,10 @@
       color: $text-color-secondary;
     }
   }
+
+  input:focus {
+    border-color: $primary-color !important;
+  }
 }
 
 %main-content {
