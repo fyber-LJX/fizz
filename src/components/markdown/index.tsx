@@ -1,7 +1,6 @@
 import Remarkable from "remarkable"
 import React from "react"
 import styles from "./index.scss"
-const hljs = require("highlightjs")
 
 const md = new Remarkable("full", {
   html: true, // Enable HTML tags in source
@@ -10,23 +9,7 @@ const md = new Remarkable("full", {
   langPrefix: "language-", // CSS language prefix for fenced blocks
   linkify: false, // Autoconvert URL-like text to links
   typographer: false,
-  quotes: "“”‘’",
-
-  // Highlighter function. Should return escaped HTML,
-  // or '' if the source string is not changed
-  highlight(str, lang) {
-    if (lang && hljs.getLanguage(lang)) {
-      try {
-        return hljs.highlight(lang, str).value
-      } catch (err) {}
-    }
-
-    try {
-      return hljs.highlightAuto(str).value
-    } catch (err) {}
-
-    return "" // use external default escaping
-  }
+  quotes: "“”‘’"
 })
 
 interface PropsType {
