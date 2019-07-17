@@ -1,40 +1,38 @@
-import Remarkable from "remarkable"
-import hljs from "highlight-ts"
+import React from "react"
+import Markdown from "src/components/markdown"
+import styles from "./index.scss"
 
-const md = new Remarkable({
-  html: true, // Enable HTML tags in source
-  xhtmlOut: true, // Use '/' to close single tags (<br />)
-  breaks: true, // Convert '\n' in paragraphs into <br>
-  langPrefix: "language-", // CSS language prefix for fenced blocks
-  linkify: false, // Autoconvert URL-like text to links
-  typographer: false,
-  quotes: "“”‘’",
+const mockData =
+  "# 这是一个标题 \n" +
+  "## 这也是一个标题 \n" +
+  "### 这也是一个标题 \n" +
+  "#### 这也是一个标题 \n" +
+  "##### 这也是一个标题 \n" +
+  "###### 这也是一个标题 \n" +
+  "```javascript \n const a = 1; console.log(1);\n``` \n" +
+  "> id sem consectetuer libero luctus adipiscing. \n" +
+  "1.  Bird \n" +
+  "2.  Fish \n" +
+  "3.  Tiger \n" +
+  "4.  Panda \n" +
+  "[foo]: http://example.com/ \n " +
+  "*single asterisks* \n " +
+  "__double underscores__ \n" +
+  "-  Bird \n" +
+  "- Fish \n" +
+  "- Tiger \n" +
+  "- Panda \n <br /> \n" +
+  "所以我们需要在 custom hooks 中发送请求、暴露出请求后的值、暴露 loading 状态、以及用户可能需要多次请求，这就需要暴露一个勾子。在发生请求错误时可能需要做某些操作，所以还需要暴露在错误时回调的勾子函数。"
 
-  // Highlighter function. Should return escaped HTML,
-  // or '' if the source string is not changed
-  highlight: function(str, lang) {
-    if (lang && hljs.getLanguage(lang)) {
-      try {
-        return hljs.highlight(lang, str).value
-      } catch (err) {}
-    }
-
-    try {
-      return hljs.highlightAuto(str).value
-    } catch (err) {}
-
-    return "" // use external default escaping
-  }
-})
-
-const mockData = `
-  ### 这是一个标题
-  #### 这也是一个标题
-  ···javascript
-    const a = 1;
-    console.log(1);
-  ···
-`
-const Detail = () => {}
+const Detail = () => {
+  return (
+    <div className={styles.detail}>
+      <article>
+        <Markdown content={mockData} />
+      </article>
+      <aside>我是侧边栏</aside>
+    </div>
+  )
+}
 
 export default Detail

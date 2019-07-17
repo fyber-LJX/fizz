@@ -37,7 +37,7 @@ const Card = (props: CardType) => {
 
   return (
     <div className={styles.card}>
-      <NavLink to={`/post/${bid}`}>
+      <NavLink to={`/detail/${bid}`}>
         <div className={styles.cardTop}>
           <div className="left">
             <h5>{title}</h5>

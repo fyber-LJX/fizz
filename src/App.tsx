@@ -1,7 +1,12 @@
 import React, { useContext } from "react"
 import Header from "./components/header"
 import { Switch, Route, Redirect } from "react-router"
-import { HomeComponent, WriteComponent, SignComponent } from "./pages"
+import {
+  HomeComponent,
+  WriteComponent,
+  SignComponent,
+  DetailComponent
+} from "./pages"
 import styles from "./styles/app.scss"
 import FizzCTX from "./share/context"
 
@@ -25,6 +30,7 @@ const App = () => {
         <Switch>
           <Route strict path="/timeline" component={HomeComponent} />
           <Route path="/write" component={WriteComponent} />
+          <Route path="/detail" component={DetailComponent} />
         </Switch>
         {showLogin && <SignComponent />}
       </div>

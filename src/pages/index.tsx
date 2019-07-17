@@ -17,4 +17,8 @@ const SignComponent = loadable(() => import("./sign"), {
   fallback: <Loading />
 })
 
-export { HomeComponent, WriteComponent, SignComponent }
+const DetailComponent = loadable(() => import("./detail"), {
+  fallback: <Loading />
+})
+
+export { HomeComponent, WriteComponent, SignComponent, DetailComponent }
