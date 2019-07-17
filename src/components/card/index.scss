@@ -27,7 +27,7 @@
       box-shadow: 0 6px 16px 0 #d6e0e8;
 
       h5 {
-        color: $primary-color;
+        color: $heading-color;
       }
 
       h6 {
@@ -42,7 +42,7 @@
 
   h5 {
     font-size: 14px;
-    color: $heading-color;
+    color: $text-color;
     line-height: 26px;
     transition: all 0.2s;
   }
