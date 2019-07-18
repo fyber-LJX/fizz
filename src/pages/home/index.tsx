@@ -1,5 +1,5 @@
 import style from "./index.scss"
-import React from "react"
+import React, { useState } from "react"
 import Card from "src/components/card"
 import TopNav from "src/components/top_nav"
 import QueueAnim from "rc-queue-anim"
@@ -111,13 +111,27 @@ const list = [
     path: "database"
   }
 ]
+
+const typeOptions = [{ name: "最热", value: 0 }, { name: "最新", value: 1 }]
+
 const HomeComponent = () => {
+  const [type, setType] = useState(0)
   return (
     <div className={style.home}>
       <TopNav list={list} />
       <div className={style.content}>
         <article>
-          <QueueAnim className={style.cardBox}>
+          <div className={style.filter}>
+            {typeOptions.map(item => (
+              <span
+                className={type === item.value ? style.active : ""}
+                onClick={() => setType(item.value)}
+              >
+                {item.name}
+              </span>
+            ))}
+          </div>
+          <QueueAnim type="bottom" className={style.cardBox}>
             {mockData.map(item => (
               <Card {...item} key={item.bid} />
             ))}
