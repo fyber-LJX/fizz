@@ -12,6 +12,9 @@ const Header = () => {
           <NavLink activeClassName={styles.active} to="/timeline">
             首页
           </NavLink>
+          <NavLink activeClassName={styles.active} to="/qa">
+            集思广益
+          </NavLink>
           <NavLink activeClassName={styles.active} to="/write">
             写文章
           </NavLink>
