@@ -1,9 +1,3 @@
-export interface StoreType {
-  userinfo: UserType
-  status: StatusType
-}
-export type StatusType = typeof STATUS
-export type UserType = typeof USERINFO
 // 全局状态
 const STATUS = {
   showLogin: false
@@ -16,6 +10,13 @@ const USERINFO = {
   img: "",
   role: 0
 }
+export interface StoreType {
+  userinfo: UserType
+  status: StatusType
+}
+export type StatusType = typeof STATUS
+export type UserType = typeof USERINFO
+
 export const INIT_STORE: StoreType = {
   userinfo: USERINFO,
   status: STATUS

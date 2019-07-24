@@ -7,7 +7,7 @@
 type ArticleType = {
   title: string
   columns: number
-  tags: number[]
+  tags: Array<number>
   description: string
   content: string
 }
@@ -26,13 +26,13 @@ export const INIT_ARTICLE_STORE: ArticleStoreType = {
   }
 }
 
+export const ARTICLE_ACTIONS = Symbol("article_action")
+export const CLEAN_ARTICLE_ACTIONS = Symbol("clean")
+
 export type ArticleAction = {
   type: typeof ARTICLE_ACTIONS | typeof CLEAN_ARTICLE_ACTIONS
   payload?: Partial<ArticleType>
 }
-
-export const ARTICLE_ACTIONS = Symbol("article_action")
-export const CLEAN_ARTICLE_ACTIONS = Symbol("clean")
 
 const reducer = (
   store: ArticleStoreType,
