@@ -24,7 +24,7 @@
     "rc-tween-one": "^2.4.1",
     "react": "^16.8.4",
     "react-css-modules": "^4.7.9",
-    "react-dev-utils": "^5.0.2",
+    "react-dev-utils": "^11.0.4",
     "react-dom": "^16.8.4",
     "react-router": "^5.0.1",
     "react-router-dom": "^5.0.1",
